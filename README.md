@@ -33,7 +33,7 @@ And also Implementation of a function to solve the quartic equation.
 **Vb * t = A * t^2 / 2 + V * t + T**
 
 **{ Vb.x * t = A.x * t^2 / 2 + V.x * t + T.x** \
-**{ Vb.y * t = A.y * t^2 / 2 + V.y * t + T.y**
+**{ Vb.y * t = A.y * t^2 / 2 + V.y * t + T.y** \
 **{ Vb.z * t = A.z * t^2 / 2 + V.z * t + T.z**
 
 
