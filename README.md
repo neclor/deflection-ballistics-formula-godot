@@ -27,7 +27,7 @@ And also Implementation of a function to solve the quartic equation.
 # Solution:
 **Vb * t + Ab * t<sup>2</sup> / 2 = T + V * t + At * t<sup>2</sup> / 2** \
 **(Vb + Ab * t/2) * t = T + (V + At * t/2) * t** \
-**Vb = T / t + V + (At - Ab) * t/2**
+**Vb = T / t + V + (At - Ab) * t / 2**
 
 **Vb = T / t + V + A * t/2** \
 **Vb * t = A * t<sup>2</sup> / 2 + V * t + T**
@@ -51,4 +51,4 @@ And also Implementation of a function to solve the quartic equation.
 **A.x<sup>2</sup> / 4 * t<sup>4</sup> + A.x * V.x * t<sup>3</sup> + (V.x<sup>2</sup> + A.x * T.x) * t<sup>2</sup> + 2 * V.x * T.x * t + T.x<sup>2</sup>  +  A.y<sup>2</sup> / 4 * t<sup>4</sup> + A.y * V.y * t<sup>3</sup> + (V.y<sup>2</sup> + A.y * T.y) * t<sup>2</sup> + 2 * V.y * T.y * t + T.y<sup>2</sup>  +  A.z<sup>2</sup>2 / 4 * t<sup>4</sup> + A.z * V.z * t<sup>3</sup> + (V.z<sup>2</sup> + A.z * T.z) * t<sup>2</sup> + 2 * V.z * T.z * t + T.z<sup>2</sup>  -  s<sup>2</sup> * t<sup>2</sup> = 0** \
 **(A.x<sup>2</sup> + A.y<sup>2</sup> + A.z<sup>2</sup>) / 4 * t<sup>4</sup> + (A.x * V.x + A.y * V.y + A.z * V.z) * t<sup>3</sup> + (V.x<sup>2</sup> + V.y<sup>2</sup> + V.z<sup>2</sup> + A.x * T.x + A.y * T.y + A.z * T.z - s<sup>2</sup>) * t<sup>2</sup> + 2 * (V.x * T.x + V.y * T.y+V.z * T.z) * t + (T.x<sup>2</sup> + T.y<sup>2</sup> + T.z<sup>2</sup>) = 0**
  
-**(A * A) / 4 * t^4 + (A * V) * t^3 + (V * V + A * T - s^2) * t^2 + 2 * (V * T) * t + T*T = 0**
+**(A * A) / 4 * t<sup>4</sup> + (A * V) * t<sup>3</sup> + (V * V + A * T - s<sup>2</sup>) * t<sup>2</sup> + 2 * (V * T) * t + T*T = 0**
