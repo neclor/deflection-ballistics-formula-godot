@@ -37,7 +37,7 @@ And also Implementation of a function to solve the quartic equation.
 **{ Vb.z * t = A.z * t^2 / 2 + V.z * t + T.z**
 
 
-**|Vb|^2 = s^2** \
+**|Vb|<sup>2</sup> = s<sup>2</sup>** \
 **|Vb|^2 - s^2 = 0** \
 **Vb.x^2 + Vb.y^2 + Vb.z^2 - s^2 = 0**
 
