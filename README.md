@@ -13,7 +13,7 @@ And also Implementation of a function to solve the quartic equation.
 
 ## Proof formula
 ![Scheme](docs/Scheme.png)
-# Given:
+### Given:
 **T** *- vector to target* \
 **V** *- target motion vector* \
 **At** *- target acceleration vector* \
@@ -24,7 +24,7 @@ And also Implementation of a function to solve the quartic equation.
 
 **Vb** *- the desired bullet motion vector*
 
-# Solution:
+### Solution:
 **Vb * t + Ab * t<sup>2</sup> / 2 = T + V * t + At * t<sup>2</sup> / 2** \
 **(Vb + Ab * t/2) * t = T + (V + At * t/2) * t** \
 **Vb = T / t + V + (At - Ab) * t / 2**
