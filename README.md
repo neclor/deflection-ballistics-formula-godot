@@ -9,7 +9,7 @@ And also Implementation of a function to solve the quartic equation. \
 **V** - target motion vector \
 **A** - is the difference between the acceleration vectors of the bullet and the target \
 **t** - is the minimum positive root of this equation: **(A * A) / 4 * t^4 + (A * V) * t^3 + (V * V + A * T - s^2) * t^2 + 2 * (V * T) * t + T*T = 0** where: \
-**s** - is the speed of the bullet\
+**s** - is the speed of the bullet
 
 ## Proof formula
 ![Scheme](docs/Scheme.png)
@@ -22,7 +22,7 @@ s - *bullet speed*\
 s = |Vb|\
 A = At - Ab\
 
-Vb - *the desired bullet motion vector*\
+Vb - *the desired bullet motion vector*
 
 # Solution:
 Vb * t + Ab * t^2 / 2 = T + V * t + At * t^2 / 2 \
@@ -51,4 +51,4 @@ Vb.x^2 + Vb.y^2 + Vb.z^2 - s^2 = 0 \
 A.x^2 / 4 * t^4 + A.x * V.x * t^3 + (V.x^2 + A.x * T.x) * t^2 + 2 * V.x * T.x * t + T.x^2  +  A.y^2 / 4 * t^4 + A.y * V.y * t^3 + (V.y^2+A.y * T.y) * t^2 + 2 * V.y * T.y * t + T.y^2  +  A.z^2 / 4 * t^4 + A.z * V.z * t^3 + (V.z^2 + A.z * T.z) * t^2 + 2 * V.z * T.z * t + T.z^2  -  s^2 * t^2 = 0 \
 (A.x^2 + A.y^2 + A.z^2) / 4 * t^4 + (A.x * V.x + A.y * V.y + A.z * V.z) * t^3 + (V.x^2 + V.y^2 + V.z^2 + A.x * T.x + A.y * T.y + A.z * T.z - s^2) * t^2 + 2 * (V.x * T.x + V.y * T.y+V.z * T.z) * t + (T.x^2 + T.y^2 + T.z^2) = 0 \
  
-**(A * A) / 4 * t^4 + (A * V) * t^3 + (V * V + A * T - s^2) * t^2 + 2 * (V * T) * t + T*T = 0** \
+**(A * A) / 4 * t^4 + (A * V) * t^3 + (V * V + A * T - s^2) * t^2 + 2 * (V * T) * t + T*T = 0**
