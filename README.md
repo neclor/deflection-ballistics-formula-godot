@@ -1,6 +1,6 @@
 # Shot prediction demo godot
 Implementation of bullet hit prediction formulas for a moving target considering accelerations. \
-And also Implementation of a function to solve the quartic equation. \
+And also Implementation of a function to solve the quartic equation.
 
 ## Formula
 **Vb = T / t + V + A * t / 2** *where:* \
