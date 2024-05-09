@@ -1,6 +1,6 @@
 extends Node
 
-func predict_shot(target_position: Vector3, target_velocity: Vector3, target_acceleration: Vector3, bullet_acceleration: Vector3, bullet_speed: float) -> Dictionary:
+func predict_shot(target_position: Vector3, target_velocity: Vector3, target_acceleration: Vector3, bullet_acceleration: Vector3, bullet_speed: float) -> Array:
 	var T: Vector3 = target_position
 	var V: Vector3 = target_velocity
 	var At: Vector3 = target_acceleration
@@ -30,22 +30,22 @@ func predict_shot(target_position: Vector3, target_velocity: Vector3, target_acc
 
 		roots_t = solve_quartic_real(b / a, c / a, d / a, e / a)
 
-	var t: float = -1
-	for root in roots_t:
-		if root > 0:
-			if root < t or t < 0:
-				t = root
+	var possible_times: Array[float] = []
+	for time in roots_t:
+		if time > 0:
+			possible_times.append(time)
 
-	var Vb: Vector3
-	var is_will_hit: bool
-	if t > 0:
-		is_will_hit = true
-		Vb = (T / t + V + A * t / 2).normalized()
+	var result: Array[Dictionary]
+	if possible_times.size() == 0:
+		result.append({"Vector": T.normalized(), "Time": -1})
+
 	else:
-		is_will_hit = false
-		Vb = T.normalized()
+		possible_times.sort()
+		for time in possible_times:
+			var vector: Vector3 = (T / time + V + A * time / 2).normalized()
+			result.append({"Vector": vector, "Time": time})
 
-	return {"vector": Vb, "time": t}
+	return result
 
 
 func solve_quadratic_real(a: float, b: float) -> Array[float]: # x^2 + a*x + b = 0
