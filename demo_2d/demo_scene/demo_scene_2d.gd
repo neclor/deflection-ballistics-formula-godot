@@ -1,11 +1,11 @@
 extends Node2D
 
 
-const BULLET_2D = preload("res://2d/projectile/bullet_2d.tscn")
+const BULLET_2D = preload("res://demo_2d/projectile/bullet_2d.tscn")
 
 
 var bullet_speed: float = 200
-var bullet_acceleration: Vector3 = Vector3.ZERO
+var bullet_acceleration: Vector2 = Vector2.ZERO
 
 
 @onready var player: CharacterBody2D = $Player2D
@@ -13,28 +13,24 @@ var bullet_acceleration: Vector3 = Vector3.ZERO
 
 
 func _on_timer_timeout() -> void:
-	create_bullets()
+	create_bullet()
 
 
-func create_bullets() -> void:
-	var target_position: Vector3 = Vector3(player.position.x, player.position.y, 0)
-	var target_velocity: Vector3 = Vector3(player.velocity.x, player.velocity.y, 0)
+func create_bullet() -> void:
+	var target_position: Vector2 = player.position
+	var target_velocity: Vector2 = player.velocity
+	var target_acceleration: Vector2 = player.current_acceleration
 
-	var predicted_shots: Array[Dictionary] = Formulas.predict_shot(target_position, target_velocity, player.current_acceleration, bullet_acceleration, bullet_speed)
+	var bullet_velocity: Vector2 = Deflection.vector2(bullet_speed, target_position, target_velocity, target_acceleration, bullet_acceleration)
 
-	for shot in predicted_shots:
-		create_bullet(shot["Vector"], shot["Time"])
-
-
-func create_bullet(vector: Vector3, time: float):
 	var new_bullet: Node = BULLET_2D.instantiate()
 
-	if time < 0:
-		new_bullet.change_color(Color.RED)
-	else:
-		new_bullet.change_color(Color.GREEN)
+	if bullet_velocity == Vector2.ZERO:
+		bullet_velocity = target_position.normalized() * bullet_speed
+		new_bullet.modulate = Color.RED
 
-	new_bullet.init(vector, bullet_speed, bullet_acceleration, time)
+
+	new_bullet.init(bullet_velocity, bullet_acceleration)
 	add_child(new_bullet)
 
 

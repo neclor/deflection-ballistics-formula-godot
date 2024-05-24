@@ -1,5 +1,6 @@
 extends Node
 
+
 func predict_shot(target_position: Vector3, target_velocity: Vector3, target_acceleration: Vector3, bullet_acceleration: Vector3, bullet_speed: float) -> Array:
 	var T: Vector3 = target_position
 	var V: Vector3 = target_velocity
@@ -120,7 +121,9 @@ func solve_quartic_real(a: float, b: float, c: float, d: float) -> Array[float]:
 	var r: float = -3 * (a ** 4) / 256 + b * (a ** 2) / 16 - a * c / 4 + d
 
 	if is_zero_approx(q):
+		prints(p, r)
 		var roots_pow_2: Array[float] = solve_quadratic_real(p, r)
+		print(roots_pow_2)
 		for root_pow_2 in roots_pow_2:
 			if is_zero_approx(root_pow_2):
 				roots.append(0)
@@ -140,8 +143,8 @@ func solve_quartic_real(a: float, b: float, c: float, d: float) -> Array[float]:
 		roots.append_array(solve_quadratic_real(-sqrt_p_add_2y, p + y + (q / 2 / sqrt_p_add_2y)))
 		roots.append_array(solve_quadratic_real(sqrt_p_add_2y, p + y - (q / 2 / sqrt_p_add_2y)))
 
-		var neg_a_div_4: float = -a / 4
-		for i in roots.size():
-			roots[i] += neg_a_div_4
+	var neg_a_div_4: float = -a / 4
+	for i in roots.size():
+		roots[i] += neg_a_div_4
 
 	return roots
