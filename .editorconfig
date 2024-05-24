@@ -6,10 +6,6 @@ end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.md]
-indent_size = 4
-tab_width = 4
-
 [*.{gd}]
 indent_style = tab
 indent_size = 4
