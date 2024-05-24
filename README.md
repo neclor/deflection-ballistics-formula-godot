@@ -2,7 +2,7 @@
 Function on GDScript for calculating the vector of an “intercepting” shot, considering “external” accelerations.
 
 ## Using
-Function take bullet speed, target position, target velocity and optional(target_acceleration, bullet_acceleration), and returns an vector of length bullet speed.
+Function take bullet speed, target position, target velocity and optional(target_acceleration, bullet_acceleration), and returns an vector of length bullet speed.\
 If a hit is not possible, the function will return a zero vector.
 
 ### Warning 
