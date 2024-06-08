@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 Equation="*res://addons/equation_real_solver/equation_real_solver.gd"
-Deflection="*res://addons/deflection-ballistics-formula/deflection-ballistics-formula.gd"
+Deflection="*res://addons/deflection_ballistics_formula/deflection_ballistics_formula.gd"
 
 [display]
 
