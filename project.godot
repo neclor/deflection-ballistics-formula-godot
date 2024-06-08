@@ -25,7 +25,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/deflection-ballistics-formula/plugin.cfg", "res://addons/equation_real_solver/plugin.cfg")
+enabled=PackedStringArray("res://addons/deflection_ballistics_formula/plugin.cfg", "res://addons/equation_real_solver/plugin.cfg")
 
 [input]
 
