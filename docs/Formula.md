@@ -9,7 +9,7 @@
 **v = |Vp|** - Projectile velocity module
 
 ## Explanation
-![Scheme](docs/Scheme.png)
+![Scheme](Scheme.png)
 
 **t** - Time to hit  
 **Pt** - Vector to realtive target position  
