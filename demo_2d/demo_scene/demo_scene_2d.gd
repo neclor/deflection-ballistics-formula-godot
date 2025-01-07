@@ -13,24 +13,23 @@ var bullet_acceleration: Vector2 = Vector2.ZERO
 
 
 func _on_timer_timeout() -> void:
-	create_bullet()
+	create_bullets()
 
 
-func create_bullet() -> void:
-	var target_position: Vector2 = player.position
+func create_bullets() -> void:
+	var to_target: Vector2 = player.position
 	var target_velocity: Vector2 = player.velocity
 	var target_acceleration: Vector2 = player.current_acceleration
 
-	var bullet_velocity: Vector2 = Deflection.vector2(bullet_speed, target_position, target_velocity, target_acceleration, bullet_acceleration)
+	var bullet_velocities: Array[Vector2] = BDC.calculate_velocities_vector2(bullet_speed, to_target, target_velocity, bullet_acceleration, target_acceleration)
 
-	var new_bullet: Node = BULLET_2D.instantiate()
-
-	if bullet_velocity == Vector2.ZERO:
-		bullet_velocity = target_position.normalized() * bullet_speed
-		new_bullet.modulate = Color.RED
+	for bullet_velocity in bullet_velocities:
+		create_bullet(bullet_velocity)
 
 
-	new_bullet.init(bullet_velocity, bullet_acceleration)
+func create_bullet(velocity: Vector2) -> void:
+	var new_bullet: Bullet2D = BULLET_2D.instantiate()
+	new_bullet.init(velocity, bullet_acceleration)
 	add_child(new_bullet)
 
 

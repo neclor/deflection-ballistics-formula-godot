@@ -1,7 +1,8 @@
+class_name Bullet2D
 extends CharacterBody2D
 
 
-var acceleration: Vector2
+var acceleration: Vector2 = Vector2.ZERO
 
 
 func change_color(color: Color) -> void:

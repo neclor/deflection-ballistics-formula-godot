@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cinkdnumes67v"]
 
 [ext_resource type="PackedScene" uid="uid://beqhq1817oav7" path="res://demo_2d/wall/wall.tscn" id="1_orey4"]
-[ext_resource type="Script" path="res://demo_2d/demo_scene/demo_scene_2d.gd" id="1_s3u83"]
+[ext_resource type="Script" uid="uid://b1lyarsu54mq1" path="res://demo_2d/demo_scene/demo_scene_2d.gd" id="1_s3u83"]
 [ext_resource type="PackedScene" uid="uid://c561j8bdsy66w" path="res://demo_2d/player/player_2d.tscn" id="3_e1cyj"]
 
 [node name="DemoScene2D" type="Node2D"]
@@ -107,7 +107,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 1
 min_value = 10.0
-max_value = 500.0
+max_value = 1000.0
 value = 200.0
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]

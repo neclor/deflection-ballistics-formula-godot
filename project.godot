@@ -10,14 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Deflection (ballistics) Formula Demo"
+config/name="Ballistic Deflection Calculator"
+config/version="2.0.0"
 run/main_scene="res://demo_2d/demo_scene/demo_scene_2d.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
-
-[autoload]
-
-Equation="*res://addons/equation_real_solver/equation_real_solver.gd"
-Deflection="*res://addons/deflection_ballistics_formula/deflection_ballistics_formula.gd"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="uid://bqu0oh2pobqea"
 
 [display]
 
@@ -25,7 +22,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/deflection_ballistics_formula/plugin.cfg", "res://addons/equation_real_solver/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

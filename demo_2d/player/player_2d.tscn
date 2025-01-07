@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c561j8bdsy66w"]
 
-[ext_resource type="Script" path="res://demo_2d/player/player_2d.gd" id="1_5p4ya"]
-[ext_resource type="Script" path="res://demo_2d/player/camera_2d.gd" id="2_6es6y"]
+[ext_resource type="Script" uid="uid://ctx1een1qyugb" path="res://demo_2d/player/player_2d.gd" id="1_5p4ya"]
+[ext_resource type="Script" uid="uid://dmx02vsbo0f4g" path="res://demo_2d/player/camera_2d.gd" id="2_6es6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjdt4"]
 

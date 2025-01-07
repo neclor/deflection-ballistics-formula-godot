@@ -1,10 +1,12 @@
 # Godot specific ignores
 .godot/
+/android/
 *.tmp
 *.import
 .import/
 export.cfg
 export_presets.cfg
+*.uid
 
 # Dummy HTML5 export presets file for continuous integration
 !.github/dist/export_presets.cfg
@@ -22,11 +24,11 @@ mono_crash.*.json
 .DS_Store
 *~
 
-# Android ignores
+# My android ignores
 keystore/
 android/
 
-#
+# DLL
 *.dll
 *.dylib
 *.so
