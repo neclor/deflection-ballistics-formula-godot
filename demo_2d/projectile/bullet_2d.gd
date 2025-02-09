@@ -16,7 +16,8 @@ func init(new_velocity: Vector2, new_acceleration: Vector2) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	global_position += velocity * delta + acceleration * (delta ** 2) / 2
 	velocity += acceleration * delta
-	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
+	var collision: KinematicCollision2D = move_and_collide(Vector2(), true)
 	if collision:
 		queue_free()

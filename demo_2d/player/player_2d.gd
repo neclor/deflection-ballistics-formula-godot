@@ -18,12 +18,14 @@ func _physics_process(delta: float) -> void:
 
 	if direction != Vector2.ZERO:
 		current_acceleration = Vector2.ZERO
-		velocity = Vector2(direction.x, direction.y) * speed
+		velocity = direction * speed
+		global_position += velocity * delta
 	else:
 		current_acceleration = acceleration
-		velocity += Vector2(current_acceleration.x, current_acceleration.y) * delta
+		global_position += velocity * delta + current_acceleration * (delta ** 2) / 2
+		velocity += current_acceleration * delta
 
-	move_and_slide()
+	move_and_collide(Vector2(), true)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
